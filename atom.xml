@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-09-18T07:36:37.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>字之</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初出</title>
+    <link href="http://yoursite.com/2017/09/16/%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/09/16/简介/</id>
+    <published>2017-09-16T03:30:33.000Z</published>
+    <updated>2017-09-18T07:36:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一个blog，记录下这一路</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一个blog，记录下这一路&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活足迹" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB%E8%B6%B3%E8%BF%B9/"/>
+    
+  </entry>
+  
+</feed>
