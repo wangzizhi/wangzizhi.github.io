@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="字之">
+  <meta name="description" content="字之的博客">
+  
+  <title>blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
+    <p>字之</p>
+    <div class="nav-link">
+        
+        
+        <a  href="https://github.com/wangzizhi" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/09/">September 2017<span class="archive-count">2</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Css/">Css<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/生活/">生活<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-2.png)" >
+  <h2>css选择器</h2>
+    
+  <p>作者:字之 &nbsp&nbsp 发布于:<time datetime="2017-09-20T03:23:58.000Z">
+          2017-09-20
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p>Css选择器 会用易用好则难</p>
+<h1 id="Css选择器基础"><a href="#Css选择器基础" class="headerlink" title="Css选择器基础"></a>Css选择器基础</h1><p>选择器主要分为以下几类</p>
+<blockquote>
+<ul>
+<li>元素选择器</li>
+<li>类选择器</li>
+<li>Id选择器</li>
+<li>子类选择器</li>
+<li>属性选择器</li>
+<li>兄弟选择器</li>
+<li>伪类和伪元素选择器</li>
+</ul>
+</blockquote>
+<p>前面4类选择器使我们常用到的，相较而言与我们比较熟悉，这里我们变不再做过多赘述了。</p>
+<p>后面3类选择器我们不常用到，但其实妙用大多来自这3类选择器中，尤其是伪类和伪元素选择器提供了相当强大的功能。下面就让我们来了解一下。</p>
+<h2 id="1-属性选择器"><a href="#1-属性选择器" class="headerlink" title="1.属性选择器 [ ]"></a>1.属性选择器 [ ]</h2><p>属性选择器是基于元素选择器、类选择器和Id选择器之上的，也就是说你不能直接定位到有这个属性的元素，而是需要指定哪一类文档元素有或者没有该属性。<br>代码示例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">img[alt] &#123;border: 1px solid #333&#125; //找到拥有alt属性的图片元素，加边框</div><div class="line">p[class="info-p"] &#123;color: gray&#125;   //找到拥有类名为info-p的段落元素，将字体变为红色</div></pre></td></tr></table></figure></p>
+<p>妙用场景：</p>
+<blockquote>
+<p> 基于Css的过滤搜索技术 <a href="http://www.zhangxinxu.com/wordpress/2013/09/css-attr-selector-search/" target="_blank" rel="external">详情&gt;&gt;</a></p>
+</blockquote>
+<h3 id="衍生出来‘部分属性选择器’"><a href="#衍生出来‘部分属性选择器’" class="headerlink" title="衍生出来‘部分属性选择器’"></a>衍生出来‘部分属性选择器’</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">img[alt~="info"] //找到拥有alt属性中包含'info'单词的图片元素 * 这里的'info'必须为整体不能为字符串的一部分 例如&lt;img alt="info-danger"/&gt;不能匹配得到，而&lt;img alt="info danger"/&gt;可以匹配得到</div><div class="line">img[alt^="info"] //找到拥有alt属性以'info'字符开头的图片元素</div><div class="line">img[alt$="info"] //找到拥有alt属性以'info'字符结束的图片元素</div><div class="line">img[alt*="info"] //找到拥有alt属性中包含'info'字符的图片元素 * 这里的'info'可以为字符串的一部分 例如 &lt;img alt="info-danger"/&gt;可以匹配得到</div></pre></td></tr></table></figure>
+<h2 id="2-兄弟选择器"><a href="#2-兄弟选择器" class="headerlink" title="2.兄弟选择器"></a>2.兄弟选择器</h2><p>兄弟选择器由普通兄弟元素选择器(~)与相邻兄弟元素选择器(+)组成；都是选择第一个元素后面出现的兄弟元素。</p>
+<h3 id="2-1普通兄弟选择器"><a href="#2-1普通兄弟选择器" class="headerlink" title="2.1普通兄弟选择器 ~"></a>2.1普通兄弟选择器 ~</h3><p>定义：选择紧接着一个原素后的<strong>所有</strong>指定元素，而且俩着拥有着相同的父级。<br>代码示例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1 ~ p &#123;font-size:24px;margin&#125; //选择紧接着在h1元素后面的所有p元素，h1和p拥有着相同的父级元素</div></pre></td></tr></table></figure></p>
+<h3 id="2-2相邻兄弟选择器"><a href="#2-2相邻兄弟选择器" class="headerlink" title="2.2相邻兄弟选择器 +"></a>2.2相邻兄弟选择器 +</h3><p>定义：选择紧接着一个原素后的<strong>第一个</strong>指定元素，而且俩着拥有着相同的父级。<br>代码示例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1 + p &#123;font-size:24px;margin&#125; //选择紧接着在h1元素后面的第一个p元素，h1和p拥有着相同的父级元素</div></pre></td></tr></table></figure></p>
+<p>应用场景<br>普通兄弟选择器：<br>默认字体为12px<br>要求是div下的第一个span的字体大小为12px,其余span的字体大小为24<br>代码示例<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span> ~ <span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>:<span class="number">24px</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-伪类和伪元素选择器-important"><a href="#3-伪类和伪元素选择器-important" class="headerlink" title="3 伪类和伪元素选择器  //!important"></a>3 伪类和伪元素选择器  //!important</h2><p>这里要着重区别下 伪类和伪元素</p>
+<p>伪类：类似通常HTML中的类，但是它们不会直接以html标记的形式定义，而是一个动态的，满足一定条件时才会显示出来特定的效果。</p>
+<p>伪元素：主要这里的用词是元素，虽然是不存在于dom树种，但其本质还是一种动态元素。</p>
+<h3 id="3-1-伪类-important-and-important"><a href="#3-1-伪类-important-and-important" class="headerlink" title="3.1 伪类 //!important and !important"></a>3.1 伪类 //!important and !important</h3><p>伪类总集</p>
+<table>    <thead>        <tr>            <th>例子</th>            <th>类别</th>            <th>解释</th>        </tr>    </thead>    <tbody>        <tr>            <td>                a:link</td>            <td>                链接(link)伪类</td>            <td>                选择一个用户没有访问过的链接</td>        </tr>        <tr>            <td>                a:visited</td>            <td>                链接(link)伪类</td>            <td>                选择一个用户访问过的链接</td>        </tr>        <tr>            <td>                a:hover</td>            <td>                行为性伪类</td>            <td>                选择一个用户将鼠标指针悬浮在上方的元素</td>        </tr>        <tr>            <td>                a:active</td>            <td>                行为性伪类</td>            <td>                选择一个用户使用中的元素</td>        </tr>        <tr>            <td>                a:focus</td>            <td>                行为性伪类</td>            <td>                选择一个拥有用户焦点的元素</td>        </tr>        <tr>            <td>                input:enabled</td>            <td>                状态性伪类</td>            <td>                选择一个处于可编辑状态(默认)下的元素</td>        </tr>        <tr>            <td>                input:disabled</td>            <td>                状态性伪类</td>            <td>                选择一个通过设置disabled属性而处于不可编辑状态下的元素</td>        </tr>        <tr>            <td>                input:checked</td>            <td>                状态性伪类</td>            <td>                选择一个被选中的单选或者复选按钮</td>        </tr>        <tr>            <td>                input:indeterminate</td>            <td>                状态性伪类</td>            <td>                选择一个处于不确定状态下的单选或者复选按钮(可能被选中或者不被选中)</td>        </tr>        <tr>            <td>                li:first-child</td>            <td>                结构性伪类</td>            <td>                选择父元素下的第一个子元素</td>        </tr>        <tr>            <td>                li:last-child</td>            <td>                结构性伪类</td>            <td>                选择父元素下的最后一个子元素</td>        </tr>        <tr>            <td>                div:only-child</td>            <td>                结构性伪类</td>            <td>                如果某个元素是它父元素中惟一的子元素,那么将会被匹配</td>        </tr>        <tr>            <td>                p:first-of-type</td>            <td>                结构性伪类</td>            <td>                选择父元素中同类型的第1个子元素</td>        </tr>        <tr>            <td>                p:last-of-type</td>            <td>                结构性伪类</td>            <td>                选择父元素中同类型的最后一个子元素</td>        </tr>        <tr>            <td style="color:red">                img:only-of-type</td>            <td>                结构性伪类</td>            <td>                若元素为父元素中<strong>同类型的唯一元素<strong>，则会被匹配</strong></strong></td>        </tr><tr><td style="color:red">                li:nth-child(2n+3)</td>            <td>                结构性伪类</td>            <td>                选择以第3个子元素为开始，2为等差数向后递增的子元素中，如果该子元素为li元素则样式生效，不是li元素样式不会生效。即选中 3 5 7 9 11 … 中是li元素的子元素赋予样式</td>        </tr><tr><td style="color:red">                li:nth-last-child(3n+2)</td>            <td>                结构性伪类</td>            <td>                选择以倒数第二个子元素为开始，3为等差数向前递减的子元素中，如果该子元素为li元素样式生效，不是li元素样式不会生效</td>        </tr><tr><td style="color:red">                p:nth-of-type(3n)</td>            <td>                结构性伪类</td>            <td>                选择父元素下的所有p元素提取出来，以0为开始，3为等差数向后递增的p元素，对子元素的排序没有要求,即俩个p元素之间可以插入任意多个元素，不会影响最终效果</td>        </tr><tr><td style="color:red">                p:nth-last-of-type(2n+1)</td>            <td>                结构性伪类</td>            <td>                选择父元素下的所有p元素提取出来，以倒数第一个p元素为开始，2为等差数向前递减的p元素，对子元素的排序没有要求，即俩个p元素之间可以插入任意多个元素，不会影响最终效果</td>        </tr><tr><td>                section:target</td>            <td>                目标伪类</td>            <td>                选择URI片段标示符的值指向的元素</td>        </tr><tr><td>                div:empty</td>            <td>                空伪类</td>            <td>                选择没有任何子元素或者文本的元素</td>        </tr><tr><td>                div:not(.awesome)</td>            <td>                否定伪类</td>            <td>                选择不匹配某个状态标示符的元素</td>        </tr>    </tbody><br></table>
+
+<p>介绍几个常用的伪类</p>
+<h4 id="first-child"><a href="#first-child" class="headerlink" title=":first-child"></a>:first-child</h4><p>选择父元素下的第一个子元素<br>示例代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span> &#123;<span class="attribute">font-size</span>:<span class="number">24px</span>&#125;</div></pre></td></tr></table></figure></p>
+<p>注意一下这里选择的并不是第一ul下的第一个li,也不是所有ul下的第一个li,而是所有的ul下的第一个子元素为li的元素集合.</p>
+<h4 id="last-child"><a href="#last-child" class="headerlink" title=":last-child"></a>:last-child</h4><p>选择父元素下的最后一个子元素<br>示例代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;<span class="attribute">font-size</span>:<span class="number">24px</span>&#125;</div></pre></td></tr></table></figure></p>
+<p>同理这里选择的并不是第一ul下的最后一个li,也不是所有ul下的第一个li,而是选择的是所有的ul下的最后一个子元素为li的元素集合.</p>
+<h4 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child"></a>:nth-child</h4><p>当父元素中子元素的序列匹配所给数字时会被选中，会以文档树开头作为起点，来计算所有元素<br>示例代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">table tr td:nth-child(odd)&#123;background:#fcfcfc&#125; //给表格奇数行加背景色</div><div class="line">table tr td:nth-child(2n+0)&#123;background:#fcfcfc&#125; //给表格偶数行加背景色</div><div class="line">table tr td:nth-child(2n+3)&#123;background:#fcfcfc&#125; //给表格3行为开始，2为等差的行数加背景色</div></pre></td></tr></table></figure></p>
+<h4 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type"></a>:nth-of-type</h4><p>选择父元素中指定类型的子元素按序列匹配<br>示例代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p:nth-of-type(3n) &#123;font-size:24px&#125; //选择父元素下的所有p元素提取出来，以0为开始，3为等差数向后递增的p元素，对子元素的排序没有要求,即俩个p元素之间可以插入任意多个元素，不会影响最终效果</div></pre></td></tr></table></figure></p>
+<p>总结下</p>
+<blockquote>
+<ol>
+<li>所有伪类中带child的，针对的是父元素下的<strong>所有</strong>子元素集进行排序,而所有伪类中带type的，针对的是父元素下的<strong>指定</strong>元素集进行排序</li>
+<li>(2n+0)的表达式中 n旁边的数字代表等差数，+号左或者右的数字代表起始计算位置。</li>
+<li>所有伪类选择的都是一个元素集，并不是单一元素，直选中单一元素只是应为你只有一个元素是满足选择条件的。 </li>
+</ol>
+</blockquote>
+<h3 id="3-1-伪元素-important-and-important"><a href="#3-1-伪元素-important-and-important" class="headerlink" title="3.1 伪元素 //!important and !important"></a>3.1 伪元素 //!important and !important</h3><p>伪元素总集</p>
+<p><table><thead><tr><th>                例子</th>            <th>                类别</th>            <th>                解释</th>        </tr></thead><tbody><tr><td>                .alpha:first-letter</td>            <td>                文本伪元素</td>            <td>                选择元素内文本的第一个字母</td>        </tr><tr><td>                .bravo:first-line</td>            <td>                文本伪元素</td>            <td>                选择元素内文本的第一行</td>        </tr><tr><td>                div:before</td>            <td>                生成的内容</td>            <td>                在被选择元素前创建伪元素</td>        </tr><tr><td>                a:after</td>            <td>                生成的内容</td>            <td>                在被选择元素末尾创建伪元素</td>        </tr><tr><td>                ::selection</td>            <td>                片段伪元素</td>            <td>                选择通过用户操作所选定或者高亮的部分</td>        </tr>    </tbody><br></table><br>介绍俩常用的伪元素</p>
+<h4 id="before和-after-important-and-important-and-important"><a href="#before和-after-important-and-important-and-important" class="headerlink" title=":before和:after   //!important and !important and !important"></a>:before和:after   //!important and !important and !important</h4><p>before与:after生成内容伪元素向被选择的元素内部追加新的行内伪元素。这一类伪元素最普遍的用法，是配合content属性，向页面内添加一些不太重要的内容，但并不常常如此。伪元素不需要使用额外的元素标签，就可以向页面添加一些用户界面相关的内容。</p>
+<p>这俩个伪元素常被我们用来实现一些特殊的效果</p>
+<blockquote>
+<ol>
+<li>特殊形状的图形 <a href="https://codepen.io/zizhi/pen/OggxKW" target="_blank" rel="external">例子</a></li>
+<li>字符animation loading效果 <a href="http://www.zhangxinxu.com/wordpress/2016/11/css-content-pre-animation-character-loading/" target="_blank" rel="external">例子</a></li>
+<li>:after伪类+content内容生成经典应用举例 <a href="http://www.zhangxinxu.com/wordpress/2010/09/after%E4%BC%AA%E7%B1%BBcontent%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" target="_blank" rel="external">例子</a></li>
+</ol>
+</blockquote>
+<h2 id="个人感悟"><a href="#个人感悟" class="headerlink" title="个人感悟"></a>个人感悟</h2><p>其实一个页面的结构一定程度上影响了写css时，对选择器的选择。建议先整体构思页面结构，找出如何才能更少，更简单地使用的css的选择器就能实现你想要的页面效果。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上纯属个人观点，文章如有表述不准确,欢迎到<a href="https://github.com/wangzizhi/wangzizhi.github.io/issues" target="_blank" rel="external">项目</a>中提ISSUE,也希望能给您的学习带来一丝帮助。</p>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/09/16/简介/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Css选择器基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">Css选择器基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-属性选择器"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.属性选择器 [ ]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#衍生出来‘部分属性选择器’"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">衍生出来‘部分属性选择器’</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-兄弟选择器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.兄弟选择器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1普通兄弟选择器"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1普通兄弟选择器 ~</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2相邻兄弟选择器"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2相邻兄弟选择器 +</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-伪类和伪元素选择器-important"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3 伪类和伪元素选择器  //!important</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-伪类-important-and-important"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">3.1 伪类 //!important and !important</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#first-child"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">:first-child</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#last-child"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">:last-child</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nth-child"><span class="post-toc-number">1.3.1.3.</span> <span class="post-toc-text">:nth-child</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nth-of-type"><span class="post-toc-number">1.3.1.4.</span> <span class="post-toc-text">:nth-of-type</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-伪元素-important-and-important"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3.1 伪元素 //!important and !important</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#before和-after-important-and-important-and-important"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">:before和:after   //!important and !important and !important</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人感悟"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">个人感悟</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">结语</span></a></li></ol></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  blog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
