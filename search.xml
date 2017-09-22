@@ -3,6 +3,101 @@
   
     
     <entry>
+      <title><![CDATA[Css值和单位]]></title>
+      <url>/2017/09/22/Css%E5%8D%95%E4%BD%8D/</url>
+      <content type="html"><![CDATA[<h1 id="值和单位"><a href="#值和单位" class="headerlink" title="值和单位"></a>值和单位</h1><p>css的所有工作大多都是基于单位的，这是影响所有属性的颜色、距离和大小的一种元素。</p>
+<h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><p>单位总览：</p>
+<table width="500"><br><tbody><tr><br><th scope="col">单位</th><br><th scope="col">解释</th><br></tr><br><tr><br><td>em</td><br><td>相对于父元素的字体大小</td><br></tr><br><tr><br><td>ex</td><br><td>相对于小写字母”x”的高度</td><br></tr><br><tr><br><td>gd</td><br><td>一般用在东亚字体排版上，这个与英文并无关系</td><br></tr><br><tr><br><td>rem</td><br><td>相对于根元素字体大小</td><br></tr><br><tr><br><td>vw</td><br><td>相对于视窗的宽度：视窗宽度是100vw</td><br></tr><br><tr><br><td>vh</td><br><td>相对于视窗的高度：视窗高度是100vh</td><br></tr><br><tr><br><td>vm</td><br><td>相对于视窗的宽度或高度，取决于哪个更小</td><br></tr><br><tr><br><td>ch</td><br><td>相对于0尺寸</td><br></tr><br><tr><br><td>px</td><br><td>相对于屏幕分辨率而不是视窗大小：通常为1个点或1/72英寸</td><br></tr><br><tr><br><td>in</td><br><td>inch, 表英寸</td><br></tr><br><tr><br><td>cm</td><br><td>centimeter, 表厘米</td><br></tr><br><tr><br><td>mm</td><br><td>millimeter, 表毫米</td><br></tr><br><tr><br><td>pt</td><br><td>1/72英寸</td><br></tr><br><tr><br><td>pc</td><br><td>12点活字，或1/12点</td><br></tr><br><tr><br><td>%</td><br><td>相对于父元素。正常情况下是通过属性定义自身或其他元素</td><br></tr><br></tbody></table>
+
+<p>常用单位：</p>
+<blockquote>
+<ul>
+<li>px:新手必备单位，用得最普遍的单位之一，属于绝对长度单位</li>
+<li>%:学了些基础在考虑流式布局的时候用得较多，属于相对长度单位</li>
+<li>em:弹性布局初期选择之一，属于相对长度单位</li>
+<li>rem:弹性布局成熟选择之一，属于相对长度单位</li>
+<li>vw、vh、vm:基于window.innerWidth/window.innerHeight的相对单位</li>
+</ul>
+</blockquote>
+<h3 id="em-有坑"><a href="#em-有坑" class="headerlink" title="em (有坑)"></a>em (有坑)</h3><p>定义是相对于父元素的字体大小。但经过实践证明并非如此。<br>分为俩种情况讨论</p>
+<blockquote>
+<ol>
+<li>字体大小：任何情况下字体大小也就是font-size与父元素是保持高度一致的，也就是1em就等于父元素的font-size。</li>
+<li>非字体大小或者长度：具体有boder、width、height、padding、margin、line-height等属性的值,是根据子元素的font-size进行计算的，也就是这里的1em其实是等于子元素的font-size。<a href="https://codepen.io/zizhi/pen/aLmmGR" target="_blank" rel="external">例子</a></li>
+</ol>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span>&gt;</div><div class="line">  &lt;span&gt;1&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span>&#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">12px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span> &#123;</div><div class="line">   <span class="attribute">border</span>:<span class="number">1em</span> solid <span class="number">#ccc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>例子中border里的1em就是等于12px，而不是等于24px;这里还有一种理解，如果你没设置子元素的font-size时，其实em也是根据子元素的font-size计算的，因为这是子元素的font-size是继承于父元素的。</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>定义：相对于根元素html元素字体大小，这能给我们带来什么好处呢，就是我们在rem时只需要根据媒体查询便能轻松的改变整个页面的大小，实现弹性布局的效果。是比较好的弹性布局方案之一了</p>
+<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>百分比，在我们日常的代码写作中用的也比较多。<br>这里介绍个不常用的能用百分比单位的属性<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vertical-align:10%; //基于文本基线上浮10%个line-height高度</div></pre></td></tr></table></figure></p>
+<h2 id="时间、频率、角度"><a href="#时间、频率、角度" class="headerlink" title="时间、频率、角度"></a>时间、频率、角度</h2><p>单位总览:</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deg</td>
+<td>degrees, 角度</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>grads, 百分度</td>
+</tr>
+<tr>
+<td>rad</td>
+<td>radians, 弧度</td>
+</tr>
+<tr>
+<td>turn</td>
+<td>turns, 圈数</td>
+</tr>
+<tr>
+<td>ms</td>
+<td>milliseconds, 毫秒数</td>
+</tr>
+<tr>
+<td>s</td>
+<td>seconds, 秒数</td>
+</tr>
+<tr>
+<td>Hz</td>
+<td>Hertz, 赫兹</td>
+</tr>
+<tr>
+<td>kHz</td>
+<td>kilohertz, 千赫</td>
+</tr>
+</tbody>
+</table>
+<p>这些单位多用于显示动画或者canvas和svg的绘图中用得较多</p>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>16进制颜色、rgb颜色和hsl颜色，其中rgb颜色实际上和16进制颜色是近亲，只是进制的差异，都归属于rgb颜色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#ff80e1</span></div><div class="line">这里可以直接换算出来<span class="selector-tag">rgb</span>的颜色值</div><div class="line"><span class="selector-tag">rgb</span>(255,128,225);其中255是<span class="selector-tag">ff</span>换算出来的，128是80换算出来的，225是<span class="selector-tag">e1</span>换算出来的</div><div class="line"><span class="selector-tag">rgb</span>还可以用百分比进行标识</div><div class="line"><span class="selector-tag">rab</span>(100%,82%,88%);100%标识的色值为255.</div></pre></td></tr></table></figure>
+<p>hsl颜色中“HSL”所表示的是“H:色相”，“S：饱和度”，“L：亮度”。色相是在色盘上的颜色，颜色的选择是使用饱和度：“0度是红色”，“120度为绿色”和“240度为蓝色”。hsl大多用于工业用色，我们相对用的较少。</p>
+<p>hsl和rgb都衍生出了hsla和rgba<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">hsla</span>(200,30%,60%,<span class="selector-class">.8</span>);</div><div class="line"><span class="selector-tag">rgb</span>(255,128,225,<span class="selector-class">.8</span>);</div><div class="line">这里的最后一个数字代表的是透明度，值得范围在0<span class="selector-tag">-1</span>，1标识不透明，0标识完全透明</div></pre></td></tr></table></figure></p>
+<p>transparent关键字，可以近似认为是rgba(0,0,0,0)。用这个关键字可以实现很多效果比如三角形 <a href="https://codepen.io/zizhi/pen/PjZNgZ" target="_blank" rel="external">例子</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上纯属个人观点，文章如有表述不准确,欢迎到[项目][5]中提ISSUE,也希望能给您的学习带来一丝帮助。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Css </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Css基础 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[css选择器]]></title>
       <url>/2017/09/20/css%E9%80%89%E6%8B%A9%E5%99%A8/</url>
       <content type="html"><![CDATA[<p>Css选择器 会用易用好则难</p>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="字之">
+  <meta name="description" content="字之的博客">
+  
+  <title>blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
+    <p>字之</p>
+    <div class="nav-link">
+        
+        
+        <a  href="https://github.com/wangzizhi" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/09/">September 2017<span class="archive-count">3</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Css/">Css<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/生活/">生活<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-7.png)" >
+  <h2>Css值和单位</h2>
+    
+  <p>作者:字之 &nbsp&nbsp 发布于:<time datetime="2017-09-22T06:08:51.000Z">
+          2017-09-22
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h1 id="值和单位"><a href="#值和单位" class="headerlink" title="值和单位"></a>值和单位</h1><p>css的所有工作大多都是基于单位的，这是影响所有属性的颜色、距离和大小的一种元素。</p>
+<h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><p>单位总览：</p>
+<table width="500"> <tbody><tr> <th scope="col">单位</th> <th scope="col">解释</th> </tr> <tr> <td>em</td> <td>相对于父元素的字体大小</td> </tr> <tr> <td>ex</td> <td>相对于小写字母”x”的高度</td> </tr> <tr> <td>gd</td> <td>一般用在东亚字体排版上，这个与英文并无关系</td> </tr> <tr> <td>rem</td> <td>相对于根元素字体大小</td> </tr> <tr> <td>vw</td> <td>相对于视窗的宽度：视窗宽度是100vw</td> </tr> <tr> <td>vh</td> <td>相对于视窗的高度：视窗高度是100vh</td> </tr> <tr> <td>vm</td> <td>相对于视窗的宽度或高度，取决于哪个更小</td> </tr> <tr> <td>ch</td> <td>相对于0尺寸</td> </tr> <tr> <td>px</td> <td>相对于屏幕分辨率而不是视窗大小：通常为1个点或1/72英寸</td> </tr> <tr> <td>in</td> <td>inch, 表英寸</td> </tr> <tr> <td>cm</td> <td>centimeter, 表厘米</td> </tr> <tr> <td>mm</td> <td>millimeter, 表毫米</td> </tr> <tr> <td>pt</td> <td>1/72英寸</td> </tr> <tr> <td>pc</td> <td>12点活字，或1/12点</td> </tr> <tr> <td>%</td> <td>相对于父元素。正常情况下是通过属性定义自身或其他元素</td> </tr> </tbody></table>
+
+<p>常用单位：</p>
+<blockquote>
+<ul>
+<li>px:新手必备单位，用得最普遍的单位之一，属于绝对长度单位</li>
+<li>%:学了些基础在考虑流式布局的时候用得较多，属于相对长度单位</li>
+<li>em:弹性布局初期选择之一，属于相对长度单位</li>
+<li>rem:弹性布局成熟选择之一，属于相对长度单位</li>
+<li>vw、vh、vm:基于window.innerWidth/window.innerHeight的相对单位</li>
+</ul>
+</blockquote>
+<h3 id="em-有坑"><a href="#em-有坑" class="headerlink" title="em (有坑)"></a>em (有坑)</h3><p>定义是相对于父元素的字体大小。但经过实践证明并非如此。 分为俩种情况讨论</p>
+<blockquote>
+<ol>
+<li>字体大小：任何情况下字体大小也就是font-size与父元素是保持高度一致的，也就是1em就等于父元素的font-size。</li>
+<li>非字体大小或者长度：具体有boder、width、height、padding、margin、line-height等属性的值,是根据子元素的font-size进行计算的，也就是这里的1em其实是等于子元素的font-size。<a href="https://codepen.io/zizhi/pen/aLmmGR" target="_blank" rel="external">例子</a></li>
+</ol>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span>&gt;</div><div class="line">  &lt;span&gt;1&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span>&#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">12px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span> &#123;</div><div class="line">   <span class="attribute">border</span>:<span class="number">1em</span> solid <span class="number">#ccc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>例子中border里的1em就是等于12px，而不是等于24px;这里还有一种理解，如果你没设置子元素的font-size时，其实em也是根据子元素的font-size计算的，因为这是子元素的font-size是继承于父元素的。</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>定义：相对于根元素html元素字体大小，这能给我们带来什么好处呢，就是我们在rem时只需要根据媒体查询便能轻松的改变整个页面的大小，实现弹性布局的效果。是比较好的弹性布局方案之一了</p>
+<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>百分比，在我们日常的代码写作中用的也比较多。 这里介绍个不常用的能用百分比单位的属性 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vertical-align:10%; //基于文本基线上浮10%个line-height高度</div></pre></td></tr></table></figure></p>
+<h2 id="时间、频率、角度"><a href="#时间、频率、角度" class="headerlink" title="时间、频率、角度"></a>时间、频率、角度</h2><p>单位总览:</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deg</td>
+<td>degrees, 角度</td>
+</tr>
+<tr>
+<td>grad</td>
+<td>grads, 百分度</td>
+</tr>
+<tr>
+<td>rad</td>
+<td>radians, 弧度</td>
+</tr>
+<tr>
+<td>turn</td>
+<td>turns, 圈数</td>
+</tr>
+<tr>
+<td>ms</td>
+<td>milliseconds, 毫秒数</td>
+</tr>
+<tr>
+<td>s</td>
+<td>seconds, 秒数</td>
+</tr>
+<tr>
+<td>Hz</td>
+<td>Hertz, 赫兹</td>
+</tr>
+<tr>
+<td>kHz</td>
+<td>kilohertz, 千赫</td>
+</tr>
+</tbody>
+</table>
+<p>这些单位多用于显示动画或者canvas和svg的绘图中用得较多</p>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>16进制颜色、rgb颜色和hsl颜色，其中rgb颜色实际上和16进制颜色是近亲，只是进制的差异，都归属于rgb颜色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#ff80e1</span></div><div class="line">这里可以直接换算出来<span class="selector-tag">rgb</span>的颜色值</div><div class="line"><span class="selector-tag">rgb</span>(255,128,225);其中255是<span class="selector-tag">ff</span>换算出来的，128是80换算出来的，225是<span class="selector-tag">e1</span>换算出来的</div><div class="line"><span class="selector-tag">rgb</span>还可以用百分比进行标识</div><div class="line"><span class="selector-tag">rab</span>(100%,82%,88%);100%标识的色值为255.</div></pre></td></tr></table></figure>
+<p>hsl颜色中“HSL”所表示的是“H:色相”，“S：饱和度”，“L：亮度”。色相是在色盘上的颜色，颜色的选择是使用饱和度：“0度是红色”，“120度为绿色”和“240度为蓝色”。hsl大多用于工业用色，我们相对用的较少。</p>
+<p>hsl和rgb都衍生出了hsla和rgba <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">hsla</span>(200,30%,60%,<span class="selector-class">.8</span>);</div><div class="line"><span class="selector-tag">rgb</span>(255,128,225,<span class="selector-class">.8</span>);</div><div class="line">这里的最后一个数字代表的是透明度，值得范围在0<span class="selector-tag">-1</span>，1标识不透明，0标识完全透明</div></pre></td></tr></table></figure></p>
+<p>transparent关键字，可以近似认为是rgba(0,0,0,0)。用这个关键字可以实现很多效果比如三角形 <a href="https://codepen.io/zizhi/pen/PjZNgZ" target="_blank" rel="external">例子</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上纯属个人观点，文章如有表述不准确,欢迎到[项目][5]中提ISSUE,也希望能给您的学习带来一丝帮助。</p>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/09/20/css选择器/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#值和单位"><span class="post-toc-number">1.</span> <span class="post-toc-text">值和单位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#长度单位"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">长度单位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#em-有坑"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">em (有坑)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rem"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">rem</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">%</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间、频率、角度"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">时间、频率、角度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#颜色"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">颜色</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">结语</span></a></li></ol></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  blog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
