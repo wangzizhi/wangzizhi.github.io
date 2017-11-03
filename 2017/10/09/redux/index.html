@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="字之">
+  <meta name="description" content="字之的博客">
+  
+  <title>blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
+    <p>字之</p>
+    <div class="nav-link">
+        
+        
+        <a  href="https://github.com/wangzizhi" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/10/">October 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/09/">September 2017<span class="archive-count">3</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Css/">Css<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/前端架构/">前端架构<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/生活/">生活<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-6.png)" >
+  <h2>redux</h2>
+    
+  <p>作者:字之 &nbsp&nbsp 发布于:<time datetime="2017-10-09T06:45:49.000Z">
+          2017-10-09
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>“Redux”本身指 redux 这个 npm 包，它提供若干 API 让我们使用 reducer 创建 store，并能够 更新 store 中的数据或获取 store 中最新的状态。而“Redux 应用”则是指使用了 redux 这个 npm 包 并结合了视图层实现（如 React）及其他前端应用必备组件（路由库、Ajax 请求库）组成的完整 的类 Flux 思想的前端应用。[深入react技术栈][1]<br>Redux就其本身而言，其实就是基于Flux思想的完善与改进。作者也是为了通过Flux思想解决他的热重载和时间旅行的问题而已。如果你有接触过Flux，那理解Redux就及其容易了</p>
+<h2 id="Redux-三大原则"><a href="#Redux-三大原则" class="headerlink" title="Redux 三大原则"></a>Redux 三大原则</h2><blockquote>
+<ol>
+<li>单一数据源</li>
+<li>状态是只读的</li>
+<li>状态修改均由纯函数完成</li>
+</ol>
+</blockquote>
+<h2 id="关联组件"><a href="#关联组件" class="headerlink" title="关联组件"></a>关联组件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect(mapStateToProps, mapDispatchToProps, mergeProps, options = &#123;&#125;)(Component)</div></pre></td></tr></table></figure>
+<p>示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> SchedulerHistoryContainer = connect(</div><div class="line">    mapStateToProps,</div><div class="line">    mapDispatchToProps</div><div class="line">)(SchedulerHistory);</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> SchedulerHistoryContainer;</div></pre></td></tr></table></figure></p>
+<p>1.mapStateToProps:</p>
+<p>我们需要从 Redux 状态树中提取哪些部分当作 props 传给当前 组件。一般来说，这也是我们使用 connect 时经常传入的参数。事实上，如果不传入这个参数， React 组件将永远不会和 Redux 的状态树产生任何关系。</p>
+<p>示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state, ownProps</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        historyList: state.history.history,</div><div class="line">        historyDetil: state.history.historyDetil,</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.mapDispatchToProps:</p>
+<p>我们可以在 connect 中方便地将 actionCreator 与 dispatch 绑定在一起 （利用 bindActionCreators 方法），最终绑定好的方法也会作为 props 传给当前组件.</p>
+<p>示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> bindActionCreators(&#123;</div><div class="line">        ActionGetHistory,</div><div class="line">        ActionGetHistoryDetil</div><div class="line">    &#125;, dispatch);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.mergeProps</p>
+<p>根据文档中的定义， mergeProps 参数也是一个函数，接受 stateProps、 dispatchProps 和 ownProps 作为参数。实际上，stateProps 就是我们传给 connect 的第一个参数 mapStateToProps 最 终返回的 props。同理，dispatchProps 是第二个参数的最终产物，而 ownProps 则是组件自己的 props。这个方法更大程度上只是为了方便对三种来源的 props 进行更好的分类、命名和重组。</p>
+<p>4.options</p>
+<p>connect 参数接受的最后一个参数是 options，其中包含了两个配置项。</p>
+<p> pure：布尔值，默认为 true。当该配置为 true 时，Connect 中会定义 shouldComponentUpdate 方法并使用浅对比判断前后两次 props 是否发生了变化，以此来减少不必要的刷新。如果 应用严格按照 Redux 的方式进行架构，该配置保持默认即可。</p>
+<p>  withRef：布尔值，默认为 false。如果设置为 true，在装饰传入的 React 组件时，Connect 会保存一个对该组件的 refs 引用，你可以通过 getWrappedInstance 方法来获得该 refs， 并最终获得原始的 DOM 节点。</p>
+<h2 id="打包redux"><a href="#打包redux" class="headerlink" title="打包redux"></a>打包redux</h2><p>// 使用 redux 的 combineReducers 方法 <br><br>// 将所有 reducer 打包起来</p>
+<p>reducer<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> initState = &#123;</div><div class="line">    history: &#123;&#125;,</div><div class="line">    historyDetil:&#123;&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">ReducerHistory</span>(<span class="params">state = initState, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">        <span class="keyword">case</span> ActionType.GET_HISTORY:</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">                history: action.data</div><div class="line">            &#125;);<span class="comment">//覆盖history 返回新的state</span></div><div class="line">        <span class="keyword">case</span> ActionType.GET_HISTORY_DETIL:</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">                historyDetil: action.data</div><div class="line">            &#125;);</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">    routing: routerReducer,</div><div class="line">    scheduler: ReducerScheduler,</div><div class="line">    history:ReducerHistory</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</div></pre></td></tr></table></figure></p>
+<p>combineReducers:<br><br>其实就是一个高阶 reducer,<br>通过这个方法，我们可以方便地将多个 reducer 合并为一个。</p>
+<h2 id="生成store"><a href="#生成store" class="headerlink" title="生成store"></a>生成store</h2><p>const store = createStore(<br>    reducer,<br>    enhancer<br>);</p>
+<p>export default store;</p>
+<p>基本上， Redux 的核心功能已经全部被囊括在 createStore 及 createStore 方法最终生成的 store 中。</p>
+<h2 id="react-redux"><a href="#react-redux" class="headerlink" title="react-redux"></a>react-redux</h2><p>react-redux 提供了一个组件和一个 API 帮助 Redux 和 React 进行绑定，一个是 React 组件 <provider> ，一个是 connect()。关于它们，只需要知道的是， <provider> 接受一个 store 作为<br>props，它是整个 Redux 应用的顶层组件，而 connect() 提供了在整个 React 应用的任意组件中获 取 store 中数据的功能。</provider></provider></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'../redux/store'</span>;</div><div class="line"><span class="keyword">import</span> history <span class="keyword">from</span> <span class="string">'../redux/history'</span>;</div><div class="line"><span class="keyword">import</span> route <span class="keyword">from</span> <span class="string">'../route'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> oApp = <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>);</div><div class="line"></div><div class="line">render((</div><div class="line">    &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">        &lt;div className=<span class="string">"full-screen"</span>&gt;</div><div class="line">            &#123;route(history, store)&#125;</div><div class="line">        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    &lt;/</span>Provider&gt;</div><div class="line">), oApp);</div></pre></td></tr></table></figure>
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/2017/10/09/Flux/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/09/22/Css单位/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Redux-三大原则"><span class="post-toc-number">2.</span> <span class="post-toc-text">Redux 三大原则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关联组件"><span class="post-toc-number">3.</span> <span class="post-toc-text">关联组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包redux"><span class="post-toc-number">4.</span> <span class="post-toc-text">打包redux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成store"><span class="post-toc-number">5.</span> <span class="post-toc-text">生成store</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#react-redux"><span class="post-toc-number">6.</span> <span class="post-toc-text">react-redux</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  blog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>

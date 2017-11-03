@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/10/09/redux/</loc>
+    
+    <lastmod>2017-11-03T05:21:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/09/Flux/</loc>
+    
+    <lastmod>2017-10-10T03:01:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/22/Css%E5%8D%95%E4%BD%8D/</loc>
     
     <lastmod>2017-09-22T08:29:52.000Z</lastmod>

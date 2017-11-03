@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="字之">
+  <meta name="description" content="字之的博客">
+  
+  <title>blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
+    <p>字之</p>
+    <div class="nav-link">
+        
+        
+        <a  href="https://github.com/wangzizhi" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/10/">October 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/09/">September 2017<span class="archive-count">3</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Css/">Css<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/前端架构/">前端架构<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/生活/">生活<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-6.png)" >
+  <h2>Flux</h2>
+    
+  <p>作者:字之 &nbsp&nbsp 发布于:<time datetime="2017-10-09T07:22:52.000Z">
+          2017-10-09
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p>Flux 架构是优雅、简洁的，它合理利用了一些优秀的架构思维。</p>
+<h2 id="FLUX"><a href="#FLUX" class="headerlink" title="FLUX"></a>FLUX</h2><p>Flux最早是有 FaceBook 工程师们提出来的，其核心思想是<strong>数据</strong>和<strong>逻辑</strong>永远<strong>单向流动</strong>，Flux应用中数据从 action 到 dispatcher，再到store，最终 view 的线路是不可逆的，数据只能保持这样的方向进行传递。</p>
+<p>在使用 React 作为 Flux 的 view 中，记住其每个页面都是先进行页面初始化后由于数据变化触发的重渲染，虽然是重渲染但是其性能比不差，因为重渲染的都是 react 构造的虚拟DOM 即 Virtual DOM,所以在优化 react 性能方面建议引进 PureRender 保障从重渲染到局部渲染的转换。</p>
+<p>Flux 强调单向数据流，强调谨慎可追溯的数据变动，这些设计和约束都使得前端应用在越来 越复杂的今天不会失去清晰的逻辑和架构。</p>
+<p>一个 Flux 应用由 3 大部分组成——dispatcher、store 和 view，其中 dispatcher 负责分发事件；store 负责保存数据，同时响应事件并更新数据；view 负责订阅 store 中的数据，并使用这些数据 渲染相应的页面。</p>
+<h4 id="dispatcher-和-action-及-store"><a href="#dispatcher-和-action-及-store" class="headerlink" title="dispatcher 和 action 及 store"></a>dispatcher 和 action 及 store</h4><p>action 是一个普通的 JavaScript 对象，一般包含 type、payload 等字段，用于描述一个事件以及需要改变的相关数据。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    type: <span class="string">"action的标识"</span>， <span class="comment">//必须字段</span></div><div class="line">    payload: <span class="string">"数据可是字符串也可以是对象"</span>，</div><div class="line">    error: <span class="string">"错误信息"</span></div><div class="line">&#125;</div><div class="line">字段多少由应用的复杂度决定</div></pre></td></tr></table></figure></p>
+<p>dispatcher的作用就是发起action和识别action，对应的俩个API是dispatcher.dispatch()和dispatcher.register()。</p>
+<p>对应到的文件即dispatcher.dispatch()多用于action.js文件中，<br>dispatcher.register()多存在于store.js中。下面为示例代码</p>
+<p>action.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> action = &#123;  <span class="comment">//action</span></div><div class="line">    type: <span class="string">"success"</span>,  <span class="comment">//action 类型</span></div><div class="line">    payload: <span class="string">"成功了"</span>  <span class="comment">//action 携带的数据</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">     getFilterList() &#123;Dispatcher.dispatch(action)&#125; <span class="comment">//发起dispatch 分发action</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>store.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//判断action的类型做出数据存储</span></div><div class="line"><span class="keyword">import</span> &#123; EventEmitter &#125; <span class="keyword">from</span> <span class="string">'events'</span>; </div><div class="line"><span class="keyword">import</span> assign <span class="keyword">from</span> <span class="string">'object-assign'</span>; </div><div class="line"><span class="keyword">let</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">const</span> Store = assign(&#123;&#125;, EventEmitter.prototype, &#123;</div><div class="line">    getData() &#123; <span class="keyword">return</span> data; &#125;, <span class="comment">//通过Store.getData()可以拿到用data变量存储起来的action.payload数据</span></div><div class="line">    emitChange() &#123; <span class="keyword">this</span>.emit(<span class="string">'change'</span>); &#125;, <span class="comment">//触发改变以便于在view层监听</span></div><div class="line">    addChangeListener(callback) &#123; <span class="keyword">this</span>.on(<span class="string">'change'</span>, callback); &#125;,</div><div class="line">    removeChangeListener(callback) &#123; <span class="keyword">this</span>.removeListener(callback); &#125;</div><div class="line">&#125;);</div><div class="line">Dispatcher.register(<span class="function"><span class="params">action</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">        <span class="keyword">case</span> success:</div><div class="line">            data = action.payload;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">    &#125;</div><div class="line">    Store.emitChange();</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Store;</div></pre></td></tr></table></figure></p>
+<h4 id="view"><a href="#view" class="headerlink" title="view"></a>view</h4><p>以react为例，<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">react</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(props) &#123; </div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123; <span class="attr">data</span>: Store.getData(), &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    onChange=<span class="function"><span class="params">()</span>=&gt;</span> &#123; </div><div class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">data</span>: Store.getData(), &#125;); <span class="comment">//Store 有改变时及时获取最新数据</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentDidMount() &#123; </div><div class="line">        Store.addChangeListener(<span class="keyword">this</span>.onChange); <span class="comment">//添加监听事件</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillUnmount() &#123; </div><div class="line">        Store.removeChangeListener(<span class="keyword">this</span>.onChange); <span class="comment">//删除监听事件</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> ( <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;this.state.data&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Flux的优缺点"><a href="#Flux的优缺点" class="headerlink" title="Flux的优缺点"></a>Flux的优缺点</h2><p>生活应该看到美好面，所以我们先来看看Flux的优点：</p>
+<blockquote>
+<ol>
+<li>数据单向流动，在很大程度上让应用的逻辑变得更加清晰。</li>
+<li>数据分离，使得view层更加简洁明了，不需要关心太多的逻辑，只需要关注取得的数据。</li>
+<li>中心化控制让人称道。中心化控制让所有的请求与改变都只能通过 action 发出，统一 由 dispatcher 来分配.</li>
+</ol>
+</blockquote>
+<p>有光的地方必定会有阴影的存在。Flux的缺点也随着人们的使用逐渐暴露出来：</p>
+<blockquote>
+<ol>
+<li>Flux 的冗余代码太多，我们写一个store的时候必然会实例化一个dispatcher.</li>
+<li>我们需要创建多个store来管理不同页面的数据分发，但每个store的action都挂载在同一个 dispatcher.register() 上，也就是说这里的 register 函数监听的是整个应用所有的Dispatcher.dispatch(),每一个 dispatch 函数都会触发所有store文件中的 register 函数，这样一来如果程序足够复杂，那冗余的执行代码将大大增加。</li>
+</ol>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Flux 与 MVC 架构下不同的触发方式管理混乱相比，Flux 要优雅许多。同时也为我们提供了一条新的架构思路，也为更好的前端架构框架redux做到了启迪作用。总体上是优雅的、简洁的。</p>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/10/09/redux/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FLUX"><span class="post-toc-number">1.</span> <span class="post-toc-text">FLUX</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dispatcher-和-action-及-store"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">dispatcher 和 action 及 store</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#view"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">view</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flux的优缺点"><span class="post-toc-number">2.</span> <span class="post-toc-text">Flux的优缺点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">总结</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  blog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
