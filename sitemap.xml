@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/20/css%E9%80%89%E6%8B%A9%E5%99%A8/</loc>
+    
+    <lastmod>2017-11-09T06:09:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/09/CSS%E5%B8%83%E5%B1%80/</loc>
+    
+    <lastmod>2017-11-09T06:09:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/10/09/redux/</loc>
     
     <lastmod>2017-11-03T05:21:00.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/2017/09/22/Css%E5%8D%95%E4%BD%8D/</loc>
     
     <lastmod>2017-09-22T08:29:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/09/20/css%E9%80%89%E6%8B%A9%E5%99%A8/</loc>
-    
-    <lastmod>2017-09-21T03:22:06.000Z</lastmod>
     
   </url>
   
