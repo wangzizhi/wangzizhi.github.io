@@ -3,6 +3,73 @@
   
     
     <entry>
+      <title><![CDATA[Css堆叠上下文及堆叠顺序]]></title>
+      <url>/2017/11/10/Css%E5%A0%86%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E5%A0%86%E5%8F%A0%E9%A1%BA%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<p>层叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。</p>
+<p>层叠上下文形成条件：</p>
+<blockquote>
+<ul>
+<li>根元素 (HTML),</li>
+<li>z-index 值不为 “auto”的 绝对/相对定位，</li>
+<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，</li>
+<li>opacity 属性值小于 1 的元素，</li>
+<li>transform 属性值不为 “none”的元素，</li>
+<li>mix-blend-mode 属性值不为 “normal”的元素，</li>
+<li>filter值不为“none”的元素，</li>
+<li>perspective值不为“none”的元素，</li>
+<li>isolation 属性被设置为 “isolate”的元素，</li>
+<li>position: fixed</li>
+<li>在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值<br>-webkit-overflow-scrolling 属性被设置 “touch”的元素</li>
+</ul>
+</blockquote>
+<p>总结:</p>
+<blockquote>
+<ul>
+<li>给一个 HTML 元素定位和 z-index 赋值创建一个层叠上下文，（opacity 值不为 1 的也是相同）。</li>
+<li>层叠上下文可以包含在其他层叠上下文中，并且一起创建一个有层级的层叠上下文。</li>
+<li>每个层叠上下文完全独立于它的兄弟元素：当处理层叠时只考虑子元素。</li>
+<li>每个层叠上下文是自包含的：当元素的内容发生层叠后，整个该元素将会 在父层叠上下文中 按顺序进行层叠。</li>
+<li>层叠上下文的层级是 HTML 元素层级的一个层级，因为只有某些元素才会创建层叠上下文。可以这样说，没有创建自己的层叠上下文的元素 将被父层叠上下文包含。</li>
+</ul>
+</blockquote>
+<p><a href="https://codepen.io/zizhi/pen/NwpqqX" target="_blank" rel="external">示例</a></p>
+<p>堆叠顺序：表示元素发生层叠时候有着特定的垂直显示顺序。不同堆叠上下文形成的元素即谁在上面谁在下面的规则。</p>
+<blockquote>
+<ul>
+<li>正z-index </li>
+<li>z-index:auto 或 z-index:0 </li>
+<li>inline/inline-block水平盒子</li>
+<li>float浮动盒子</li>
+<li>block块状盒子</li>
+<li>负z-index</li>
+<li>有堆叠上下文的background/boder</li>
+</ul>
+</blockquote>
+<p>有俩个原则：</p>
+<blockquote>
+<ul>
+<li>谁大谁上：由上到下依次降低，越上面的元素就会显示在越上面</li>
+<li>后来居上：相同的等级下后面的元素会显示在之前元素的上面<br>[示例][2]</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Css </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Css基础 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Css布局]]></title>
       <url>/2017/11/09/CSS%E5%B8%83%E5%B1%80/</url>
       <content type="html"><![CDATA[<h2 id="布局方式"><a href="#布局方式" class="headerlink" title="布局方式"></a>布局方式</h2><p>页面布局主要是存在于浏览器的渲染过程中，好的布局方式不仅可以提高页面显示的整体效果，更能在一定程度上决定了一个页面的架构是否合理有效。</p>
@@ -61,7 +128,7 @@
 </blockquote>
 <p>上下居中问题；下面代码即可完成。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father</span> &#123; </div><div class="line">	<span class="attribute">display</span>:flex;</div><div class="line">	<span class="attribute">background</span>:<span class="number">#bcbcbc</span>;</div><div class="line">	<span class="attribute">justify-content</span>:center;</div><div class="line">	<span class="attribute">align-items</span>:center;</div><div class="line">	<span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.son</span> &#123;</div><div class="line">	<span class="attribute">background</span>:red;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="father"&gt;</div><div class="line">	&lt;div class="son"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>具体属性用法的讲解教程在<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰Flex教程</a>,如果有想发展移动端的，建议熟悉 我这就不多讲了。</p>
+<p>具体属性用法的讲解教程在<a href="http://blog.csdn.net/magneto7/article/details/70854472" target="_blank" rel="external">Flex教程</a>,如果有想发展移动端的，建议熟悉 我这就不多讲了。</p>
 <h2 id="细说纷纭——Grid-未来霸主"><a href="#细说纷纭——Grid-未来霸主" class="headerlink" title="细说纷纭——Grid-未来霸主"></a>细说纷纭——Grid-未来霸主</h2><p>既然人家都是未来霸主了想必我们还是有必要了解下的哈。<br>主要概念</p>
 <blockquote>
 <p>— 线 ：线定义其它元素的边界。 它们垂直和水平运行。 在下图中，有四条垂直线和四条水平线。<br>— 轨道 ：轨道是平行线之间的空间。 在下图中，有三个垂直和三个水平轨道。<br>— 细胞 ：细胞是网格的构建块。 在下图中，共有9个单元格。<br>— 区域 ：一个区域是与细胞的任意数量的矩形形状。 因此，一个轨道是一个区域 ，并因此是细胞 。<br><img src="/images/buju3.png" alt="3"></p>

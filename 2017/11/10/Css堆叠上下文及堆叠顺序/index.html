@@ -120,99 +120,92 @@
 
 <div id="content-outer">
   <div id="content-inner">
-    <div id="tag">
-    <div id="recent-posts">
-  
-      <div class="recent-post-item lazy" style="background-color:#26A69A"   data-original="/images/random/vateral-6.png"  >
-        <a class="recent-post-link" href="/2017/10/09/Flux/">
-        <div class="post-hover">
-          <!--title-->
-          <p class="post-title"><a href="/2017/10/09/Flux/" >Flux</a></p>
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-2.png)" >
+  <h2>Css堆叠上下文及堆叠顺序</h2>
+    
+  <p>作者:字之 &nbsp&nbsp 发布于:<time datetime="2017-11-10T06:28:02.000Z">
+          2017-11-10
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p>层叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。</p>
+<p>层叠上下文形成条件：</p>
+<blockquote>
+<ul>
+<li>根元素 (HTML),</li>
+<li>z-index 值不为 “auto”的 绝对/相对定位，</li>
+<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，</li>
+<li>opacity 属性值小于 1 的元素，</li>
+<li>transform 属性值不为 “none”的元素，</li>
+<li>mix-blend-mode 属性值不为 “normal”的元素，</li>
+<li>filter值不为“none”的元素，</li>
+<li>perspective值不为“none”的元素，</li>
+<li>isolation 属性被设置为 “isolate”的元素，</li>
+<li>position: fixed</li>
+<li>在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值<br>-webkit-overflow-scrolling 属性被设置 “touch”的元素</li>
+</ul>
+</blockquote>
+<p>总结:</p>
+<blockquote>
+<ul>
+<li>给一个 HTML 元素定位和 z-index 赋值创建一个层叠上下文，（opacity 值不为 1 的也是相同）。</li>
+<li>层叠上下文可以包含在其他层叠上下文中，并且一起创建一个有层级的层叠上下文。</li>
+<li>每个层叠上下文完全独立于它的兄弟元素：当处理层叠时只考虑子元素。</li>
+<li>每个层叠上下文是自包含的：当元素的内容发生层叠后，整个该元素将会 在父层叠上下文中 按顺序进行层叠。</li>
+<li>层叠上下文的层级是 HTML 元素层级的一个层级，因为只有某些元素才会创建层叠上下文。可以这样说，没有创建自己的层叠上下文的元素 将被父层叠上下文包含。</li>
+</ul>
+</blockquote>
+<p><a href="https://codepen.io/zizhi/pen/NwpqqX" target="_blank" rel="external">示例</a></p>
+<p>堆叠顺序：表示元素发生层叠时候有着特定的垂直显示顺序。不同堆叠上下文形成的元素即谁在上面谁在下面的规则。</p>
+<blockquote>
+<ul>
+<li>正z-index </li>
+<li>z-index:auto 或 z-index:0 </li>
+<li>inline/inline-block水平盒子</li>
+<li>float浮动盒子</li>
+<li>block块状盒子</li>
+<li>负z-index</li>
+<li>有堆叠上下文的background/boder</li>
+</ul>
+</blockquote>
+<p>有俩个原则：</p>
+<blockquote>
+<ul>
+<li>谁大谁上：由上到下依次降低，越上面的元素就会显示在越上面</li>
+<li>后来居上：相同的等级下后面的元素会显示在之前元素的上面<br>[示例][2]</li>
+</ul>
+</blockquote>
 
-          <!--date-->
-          
-            <p class="post-time">字之 &nbsp &nbsp 发布于:<time datetime="2017-10-09T07:22:52.000Z">
-              2017-10-09
-            </time>
-            </p>
-          
+  </div>
+  <!--评论块-->
+    
 
-          <!--tags-->
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
 
-          标签:
-            
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
-            
-          <!--分类-->
 
-          分类:
-            
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端架构/">前端架构</a></li></ul>
-            
-
-          <!--excerpt-->
-          <div class="post-excerpt">
-            <p>
-              摘要：
-              
-                Flux 架构是优雅、简洁的，它合理利用了一些优秀的架构思维。
-FLUXFlux最早是有 FaceBook 工程师们提出来的，其核心思想是数据和
-              
-            </p>
-          </div>
-          <div class="post-more"><a href="/2017/10/09/Flux/" >全文阅读</a></div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="recent-post-item lazy" style="background-color:#26A69A"   data-original="/images/random/vateral-6.png"  >
-        <a class="recent-post-link" href="/2017/10/09/redux/">
-        <div class="post-hover">
-          <!--title-->
-          <p class="post-title"><a href="/2017/10/09/redux/" >redux</a></p>
-
-          <!--date-->
-          
-            <p class="post-time">字之 &nbsp &nbsp 发布于:<time datetime="2017-10-09T06:45:49.000Z">
-              2017-10-09
-            </time>
-            </p>
-          
-
-          <!--tags-->
-
-          标签:
-            
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
-            
-          <!--分类-->
-
-          分类:
-            
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端架构/">前端架构</a></li></ul>
-            
-
-          <!--excerpt-->
-          <div class="post-excerpt">
-            <p>
-              摘要：
-              
-                简介“Redux”本身指 redux 这个 npm 包，它提供若干 API 让我们使用 reducer 创建 store，并能够 更新 store 中的数据或获取 store 中最新的状态。而“Redux 应用”则是指...
-              
-            </p>
-          </div>
-          <div class="post-more"><a href="/2017/10/09/redux/" >全文阅读</a></div>
-        </div>
-        </a>
-      </div>
-  
-  <nav class="paging">
-    <span class="page-number current">1</span>
+  <!-- Next Nav -->
+    
+  <a href="/2017/11/09/CSS布局/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
 </nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    
 </div>
-
-
-</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
   </div>
 </div>
 <div id="bottom-outer">
